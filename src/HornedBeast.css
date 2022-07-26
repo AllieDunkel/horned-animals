@@ -1,0 +1,13 @@
+
+
+article img {
+  width: 50%;
+  cursor: pointer;
+  border: 3px solid #3A2D32
+}
+
+img:hover {
+  filter: alpha(opacity=80);
+  opacity: .8;
+}
+

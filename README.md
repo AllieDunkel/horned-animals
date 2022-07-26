@@ -68,3 +68,14 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+Number and name of feature: React State and Props (lab 2)
+
+Estimate of time needed to complete: 4 hours
+
+Start time: 2:05
+
+Finish time: _____
+
+Actual time needed to complete: _____

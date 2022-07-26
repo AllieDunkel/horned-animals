@@ -1,0 +1,16 @@
+body {
+  background-color: #FFE3DC;
+  max-width: 960px;
+  font-size: 25px;
+  text-align: center;
+}
+
+
+h3 {
+  color: #3A2D32;
+  text-align: left;
+}
+
+* {
+  box-sizing: border-box;
+}
