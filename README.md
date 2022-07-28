@@ -79,3 +79,13 @@ Start time: 2:05
 Finish time: 5:39
 
 Actual time needed to complete: 3 hour and 34 minutes
+
+Number and name of feature: lab03
+
+Estimate of time needed to complete: 5 hr
+
+Start time: 3:05
+
+Finish time: 9:51 (did not work on it the whole time)
+
+Actual time needed to complete: ~4 hr 30 min
