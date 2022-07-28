@@ -1,25 +1,40 @@
 import React from 'react';
-import HornedBeast from './HornedBeast.js'
-import data from './Data.json'
-import './HornedBeast.css';
+// import HornedAnimal from './HornedAnimal.js'
+// import data from './Data.json'
+import './HornedAnimal.css';
 import './Main.css';
-
+// import Button from 'react-bootstrap/Button';
+import { Container, Row} from 'react-bootstrap';
 
 class Main extends React.Component {
   render() {
     //get data out
-    let hornedBeasts = [];
-    data.forEach((newHornedBeast, index) => {
-      hornedBeasts.push(<HornedBeast title={newHornedBeast.title} image_url={newHornedBeast.image_url} description={newHornedBeast.description} key={index}  /> );
+    // let hornedAnimal = [];
+    let hornedAnimal = this.props.data.map((newHornedAnimal, index) => {
+      //hornedAnimal.push
+
+      return <hornedAnimal
+      title={newHornedAnimal.name}
+      key={index}
+      image_url={newHornedAnimal.image_url}
+      addHornedAnimal={this.props.addHornedAnimal}
+      handleOnShowModal={this.props.handleOnShowModal}
+      />
     });
+    // data.forEach((newHornedAnimal, index) => {
+    //   hornedAnimal.push(<HornedAnimal title={newHornedAnimal.title} image_url={newHornedAnimal.image_url} description={newHornedAnimal.description} key={index}  /> );
+    // });
 
+    return(
 
-  
-    return (
-      <main>
-       {hornedBeasts}
+    <main> 
+        <Container>
+        <Row lg={4} md={3} sm={2} xs={1}>
+          {hornedAnimal}
+        </Row>
+        </Container>
       </main>
-    )
+    );
   }
 }
 
