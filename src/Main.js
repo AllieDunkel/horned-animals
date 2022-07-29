@@ -1,5 +1,5 @@
 import React from 'react';
-// import HornedAnimal from './HornedAnimal.js'
+import HornedAnimal from './HornedAnimal.js'
 // import data from './Data.json'
 import './HornedAnimal.css';
 import './Main.css';
@@ -9,12 +9,12 @@ import { Container, Row} from 'react-bootstrap';
 class Main extends React.Component {
   render() {
     //get data out
-    // let hornedAnimal = [];
-    let hornedAnimal = this.props.data.map((newHornedAnimal, index) => {
-      //hornedAnimal.push
+    // let hornedAnimals = [];
+    let hornedAnimals = this.props.data.map((newHornedAnimal,index) => {
+      // hornedAnimals.push
 
-      return <hornedAnimal
-      title={newHornedAnimal.name}
+      return <HornedAnimal
+      title={newHornedAnimal.title}
       key={index}
       image_url={newHornedAnimal.image_url}
       addHornedAnimal={this.props.addHornedAnimal}
@@ -30,7 +30,7 @@ class Main extends React.Component {
     <main> 
         <Container>
         <Row lg={4} md={3} sm={2} xs={1}>
-          {hornedAnimal}
+          {hornedAnimals}
         </Row>
         </Container>
       </main>
