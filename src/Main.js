@@ -5,13 +5,17 @@ import './HornedAnimal.css';
 import './Main.css';
 // import Button from 'react-bootstrap/Button';
 import { Container, Row} from 'react-bootstrap';
+import FindAnimal from './FindAnimal.js';
+
+
 
 class Main extends React.Component {
+
   render() {
+    console.log(this.props.data)
     //get data out
-    // let hornedAnimals = [];
     let hornedAnimals = this.props.data.map((newHornedAnimal,index) => {
-      // hornedAnimals.push
+     
 
       return <HornedAnimal
       title={newHornedAnimal.title}
@@ -21,6 +25,14 @@ class Main extends React.Component {
       handleOnShowModal={this.props.handleOnShowModal}
       />
     });
+
+
+
+    // let findAnimals = this.props.FindAnimal.map((newFindAnimal, index) =>{
+    //   return <FindAnimal
+
+
+    // });
     // data.forEach((newHornedAnimal, index) => {
     //   hornedAnimal.push(<HornedAnimal title={newHornedAnimal.title} image_url={newHornedAnimal.image_url} description={newHornedAnimal.description} key={index}  /> );
     // });
@@ -28,9 +40,13 @@ class Main extends React.Component {
     return(
 
     <main> 
+      
         <Container>
         <Row lg={4} md={3} sm={2} xs={1}>
           {hornedAnimals}
+        </Row>
+        <Row>
+          {FindAnimal}
         </Row>
         </Container>
       </main>

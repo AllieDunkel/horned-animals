@@ -47,7 +47,7 @@ class App extends React.Component {
       <>
         <Main
         addHornedAnimal={this.addHornedAnimal}
-        // data={data}
+        data={data}
         handleOnShowModal={this.handleOnShowModal}
         />
         <Footer/>
