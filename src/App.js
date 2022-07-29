@@ -1,10 +1,11 @@
 
 import React from 'react';
-import Header from './Header.js';
+// import Header from './Header.js';
 import Main from './Main.js';
 import Footer from './Footer.js';
 import './App.css';
 import Modal from 'react-bootstrap/Modal';
+import data from './Data.json';
 
 class App extends React.Component {
 
@@ -13,17 +14,17 @@ class App extends React.Component {
     super(props);
     //how do we pass state to another component? through props
     this.state = {
-      hornedbeast: '',
+      hornedAnimal: '',
       //add modal
       showModal: false,
-      selectHornedBeast: ''
+      selectHornedAnimal: ''
     };
   }
 
-  addHornedBeast = () => {
+  addHornedAnimal = () => {
     //everytime a click happens I want to add more hearts
     this.setState({
-      hornedbeast: this.state.hornedbeast + '❤️'
+      hornedAnimal: this.state.hornedAnimal + '❤️'
     });
   }
 
@@ -36,16 +37,16 @@ class App extends React.Component {
   handleOnShowModal = (name) => {
     this.setState({
       showModal: true,
-      selectHornedBeast: name
+      selectHornedAnimal: name
     })
   }
 
   render() {
+    console.log('we got data' ,data);
     return (
-      <div>
-        <Header/>
+      <>
         <Main
-        addHornedBeast={this.addHornedBeast}
+        addHornedAnimal={this.addHornedAnimal}
         // data={data}
         handleOnShowModal={this.handleOnShowModal}
         />
@@ -53,10 +54,10 @@ class App extends React.Component {
 
         <Modal show={this.state.showModal} onHide={this.handleOnHide}>
           <Modal.Header closeButton>
-           <Modal.Title>{this.state.selectHornedBeast}</Modal.Title>
+           <Modal.Title>{this.state.selectHornedAnimal}</Modal.Title>
           </Modal.Header>
         </Modal> 
-      </div>
+      </>
     );
   }
 }
