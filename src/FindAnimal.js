@@ -1,9 +1,6 @@
 import React from "react";
-import './FindAnimal.js';
 import { ListGroup, ListGroupItem, Form } from "react-bootstrap";
 import data from "./Data.json";
-
-
 
 class FindAnimal extends React.Component {
   constructor(props) {
@@ -11,55 +8,56 @@ class FindAnimal extends React.Component {
     this.state = {
       horns: "",
       howtoSort: "selected",
-      sortedData: data //need to specify getting it from the data 
+      data: data, //need to specify getting it from the data
     };
   }
 
-  handleSubmit= (event) => {
+  handleSubmit = (event) => {
     event.preventDefault();
-    let selected= event.target.selected.value;
+    let selected = event.target.selected.value;
 
     //add to state
 
     this.setState({
-      howtoSort:selected,
-    })
+      howtoSort: selected,
+    });
   };
 
   handleInput = (event) => {
     let selected = event.target.value;
-    if(selected === "1") {
+    if (selected === "1") {
       let newHorns = data.filter((numOfHorns) => numOfHorns === 1);
-      this.setState({StoredData: newHorns});
+      this.setState({ StoredData: newHorns });
     } else if (selected === "2") {
-    let newHorns = data.filter((numOfHorns) => numOfHorns === 2);
-      this.setState({StoredData: newHorns});
-  } else if (selected === "3") {
-    let newHorns = data.filter((numOfHorns) => numOfHorns === 3);
-      this.setState({StoredData: newHorns});
-} else if (selected === "100") {
-  let newHorns = data.filter((numOfHorns) => numOfHorns === 100);
-    this.setState({StoredData: newHorns});
-} else {
-  this.setState({ StoredData: data});
-}
+      let newHorns = data.filter((numOfHorns) => numOfHorns === 2);
+      this.setState({ StoredData: newHorns });
+    } else if (selected === "3") {
+      let newHorns = data.filter((numOfHorns) => numOfHorns === 3);
+      this.setState({ StoredData: newHorns });
+    } else if (selected === "100") {
+      let newHorns = data.filter((numOfHorns) => numOfHorns === 100);
+      this.setState({ StoredData: newHorns });
+    } else {
+      this.setState({ StoredData: data });
+    }
   };
 
   render() {
-    let numOfHorns = this.state.sortedData.map((numOfHorns, index) => {
+    let numOfHorns = this.state.data.map((numOfHorns, index) => {
       return (
         <ListGroupItem key={index}>
-        {numOfHorns} - {this.state.sortedData[index]}
+          {numOfHorns} - {this.state.data[index]}
         </ListGroupItem>
       );
     });
-
+    console.log('xxx', numOfHorns);
     return (
       <>
-      <section className="pickAHorned Animal">
-        <h4>Choose the Number of Horns you want to see!</h4>
-        <ListGroupItem>{numOfHorns}</ListGroupItem>
-      </section><Form onSubmit={this.handleSubmit}>
+        <section className="pickAHorned Animal">
+          <h4>Choose the Number of Horns you want to see!</h4>
+          <ListGroupItem>{numOfHorns}</ListGroupItem>
+        </section>
+        <Form onSubmit={this.handleSubmit}>
           <Form.Group>
             <p>Horn selecter</p>
 
@@ -73,7 +71,7 @@ class FindAnimal extends React.Component {
 
           <button type="submit">Submit</button>
         </Form>
-        </>
+      </>
     );
   }
 }
