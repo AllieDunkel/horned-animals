@@ -46,7 +46,7 @@ class Main extends React.Component {
           {hornedAnimals}
         </Row>
         <Row>
-          {FindAnimal}
+          <FindAnimal/>
         </Row>
         </Container>
       </main>
